@@ -20,28 +20,45 @@
 
     <section class="main-content">
       <p>
- Plugin 'VundleVim/Vundle.vim'<br>
-Plugin 'tpope/vim-surround'<br>
-Plugin 'tpope/vim-fugitive'<br>
-Plugin  'easymotion/vim-easymotion'<br>
-Plugin 'scrooloose/nerdtree'<br>
-Plugin 'jlanzarotta/bufexplorer'<br>
-Plugin 'rstacruz/sparkup'<br>
-Plugin 'garbas/vim-snipmate'<br>
-Plugin 'jeffkreeftmeijer/vim-numbertoggle'<br>
-Plugin 'scrooloose/syntastic'<br>
-Plugin 'qpkorr/vim-renamer'<br>
-Plugin 'klen/python-mode'<br>
-Plugin 'junegunn/fzf'<br>
-Plugin 'yushi/graphviz-repl'<br>
-Plugin 'shinokada/listtrans.vim'<br>
-Plugin 'vim-scripts/SearchComplete'<br>
-Plugin 'xolox/vim-notes'<br>
-Plugin 'xolox/vim-misc'<br>
-Plugin 'ctrlpvim/ctrlp.vim'<br>
+set nocompatible              " be iMproved, required
+filetype off                  " required
 
- </p>
-      <p>
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-fugitive'
+Plugin  'easymotion/vim-easymotion'
+Plugin 'scrooloose/nerdtree'
+Plugin 'jlanzarotta/bufexplorer'
+Plugin 'rstacruz/sparkup'
+Plugin 'garbas/vim-snipmate'
+Plugin 'jeffkreeftmeijer/vim-numbertoggle'
+Plugin 'scrooloose/syntastic'
+Plugin 'qpkorr/vim-renamer'
+Plugin 'klen/python-mode'
+Plugin 'junegunn/fzf'
+Plugin 'yushi/graphviz-repl'
+Plugin 'shinokada/listtrans.vim'
+Plugin 'vim-scripts/SearchComplete'
+Plugin 'xolox/vim-notes'
+Plugin 'xolox/vim-misc'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'mileszs/ack.vim'
+Plugin 'Lokaltog/vim-powerline'
+Plugin 'nixon/vim-vmath'
+Plugin 'vim-scripts/python.vim'
+Plugin 'tpope/vim-unimpaired'
+Plugin 'vim-scripts/Gundo'
+Plugin 'godlygeek/tabular'
+
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -57,14 +74,36 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
-:syntax on
+:syntax off
 let NERDTreeQuitOnOpen=1
 
 set incsearch
 set modifiable
 
-nmap ;l  :call ListTrans_toggle_format()<CR>
+"Settings for listtrans.vim
+nmap ;l  :call ListTrans_toggle_format()<CR>          
 vmap ;L  :call ListTrans_toggle_format('visual')<CR>
+
+
+"quick pairs
+imap <leader><leader>' ''<ESC>i
+imap <leader><leader>" ""<ESC>i
+imap <leader><leader>( ()<ESC>i
+imap <leader><leader>[ []<ESC>i
+
+nmap <leader>nr :NERDTree<cr>
+
+"Settings necessary for vim-powerline
+set nocompatible   " Disable vi-compatibility
+set laststatus=2   " Always show the statusline
+set encoding=utf-8 " Necessary to show Unicode glyphs
+
+" automatically reload vimrc when it's saved
+" au BufWritePost .vimrc so ~/.vimrc
+
+nnoremap <F5> :GundoToggle<CR>
+
+
 
  </p>
 
