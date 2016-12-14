@@ -10,16 +10,19 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'tpope/vim-abolish'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-fugitive'
-Plugin  'easymotion/vim-easymotion'
+Plugin 'easymotion/vim-easymotion'
 Plugin 'scrooloose/nerdtree'
 Plugin 'jlanzarotta/bufexplorer'
 Plugin 'rstacruz/sparkup'
 Plugin 'garbas/vim-snipmate'
+Plugin 'tomtom/tlib_vim'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'honza/vim-snippets'
 Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 Plugin 'scrooloose/syntastic'
-Plugin 'qpkorr/vim-renamer'
 Plugin 'klen/python-mode'
 Plugin 'junegunn/fzf'
 Plugin 'yushi/graphviz-repl'
@@ -35,7 +38,14 @@ Plugin 'vim-scripts/python.vim'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'vim-scripts/Gundo'
 Plugin 'godlygeek/tabular'
-
+Plugin 'vim-scripts/renamer.vim'
+Plugin 'mattn/emmet-vim'
+Plugin 'vim-latex/vim-latex'
+Plugin 'vim-scripts/perl-support.vim'
+Plugin 'vifm/vifm.vim'
+Plugin 'mhinz/vim-startify'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'junegunn/goyo.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -43,7 +53,7 @@ filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
 "
-" Brief help
+"  Brief help
 " :PluginList       - lists configured plugins
 " :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
 " :PluginSearch foo - searches for foo; append `!` to refresh local cache
@@ -52,7 +62,7 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
-:syntax off
+:syntax on
 let NERDTreeQuitOnOpen=1
 
 set incsearch
@@ -81,3 +91,45 @@ set encoding=utf-8 " Necessary to show Unicode glyphs
 
 nnoremap <F5> :GundoToggle<CR>
 
+"Settings necessary for vmath plugin
+vmap <expr>  ++  VMATH_YankAndAnalyse()
+nmap         ++  vip++
+
+"Settings necessary for startify
+"Most used options:~
+|g:startify_bookmarks|
+|g:startify_change_to_dir|
+|g:startify_change_to_vcs_root|
+|g:startify_custom_header|
+|g:startify_enable_special|
+|g:startify_list_order|
+|g:startify_relative_path|
+|g:startify_skiplist|
+|g:startify_update_oldfiles|
+
+""Misc options:~
+"|g:startify_commands|
+"|g:startify_custom_footer|
+"|g:startify_custom_header_quotes|
+"|g:startify_custom_indices|
+"|g:startify_disable_at_vimenter|
+"|g:startify_enable_unsafe|
+"|g:startify_files_number|
+"|g:startify_padding_left|
+"|g:startify_skiplist_server|
+"|g:startify_use_env|
+"
+""Sessions:~
+"|g:startify_session_autoload|
+"|g:startify_session_before_save|
+"|g:startify_session_delete_buffers|
+"|g:startify_session_dir|
+"|g:startify_session_persistence|
+"|g:startify_session_remove_lines|
+"|g:startify_session_savecmds|
+"|g:startify_session_savevars|
+"|g:startify_session_sort|
+
+
+let g:startify_session_dir = '~/.vim/session'
+ 
