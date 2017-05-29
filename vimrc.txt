@@ -1,3 +1,4 @@
+
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -10,21 +11,24 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'tpope/vim-abolish'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-fugitive'
-Plugin  'easymotion/vim-easymotion'
+Plugin 'easymotion/vim-easymotion'
 Plugin 'scrooloose/nerdtree'
 Plugin 'jlanzarotta/bufexplorer'
 Plugin 'rstacruz/sparkup'
 Plugin 'garbas/vim-snipmate'
+Plugin 'tomtom/tlib_vim'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'honza/vim-snippets'
 Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 Plugin 'scrooloose/syntastic'
-Plugin 'qpkorr/vim-renamer'
 Plugin 'klen/python-mode'
 Plugin 'junegunn/fzf'
 Plugin 'yushi/graphviz-repl'
-Plugin 'shinokada/listtrans.vim'
 Plugin 'vim-scripts/SearchComplete'
+Plugin 'soulston/vim-listtrans'
 Plugin 'xolox/vim-notes'
 Plugin 'xolox/vim-misc'
 Plugin 'ctrlpvim/ctrlp.vim'
@@ -35,7 +39,14 @@ Plugin 'vim-scripts/python.vim'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'vim-scripts/Gundo'
 Plugin 'godlygeek/tabular'
-
+Plugin 'vim-scripts/renamer.vim'
+Plugin 'mattn/emmet-vim'
+Plugin 'vim-latex/vim-latex'
+Plugin 'vim-scripts/perl-support.vim'
+Plugin 'junegunn/goyo.vim'
+Plugin 'mhinz/vim-startify'
+Plugin 'junegunn/vim-easy-align'
+Plugin 'dhruvasagar/vim-table-mode'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -43,7 +54,7 @@ filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
 "
-" Brief help
+"  Brief help
 " :PluginList       - lists configured plugins
 " :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
 " :PluginSearch foo - searches for foo; append `!` to refresh local cache
@@ -81,3 +92,25 @@ set encoding=utf-8 " Necessary to show Unicode glyphs
 
 nnoremap <F5> :GundoToggle<CR>
 
+"Settings necessary for vmath plugin
+vmap <expr>  ++  VMATH_YankAndAnalyse()
+nmap         ++  vip++
+
+let g:startify_bookmarks = [ '~/.vimrc', '~/.config/qutebrowser/qutebrowser.conf', '~/.bashrc' ]
+
+"Easier navigation
+nnoremap <C-I> <C-W>j
+nnoremap <C-K> <C-W>k
+nnoremap <C-L> <C-W>l
+nnoremap <C-H> <C-W>h
+
+let g:notes_directories = ['~/Notes']
+
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ea <Plug>(EasyAlign)
+
+" " Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ea <Plug>(EasyAlign)
+
+" TableModeToggle fast keys
+nmap <leader>tm :TableModeToggle<CR>
