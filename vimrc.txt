@@ -1,122 +1,131 @@
-
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
+filetype plugin on
+syntax on
+
+" This has to be done for LustyExplorer:
+:set hidden
+
 " set the runtime path to include Vundle and initialize
-" set rtp+=~/.vim/bundle/Vundle.vim
-" call vundle#begin()
-" " alternatively, pass a path where Vundle should install plugins
-" "call vundle#begin('~/some/path/here')
-"
-" " let Vundle manage Vundle, required
-"
-" Plugin 'VundleVim/Vundle.vim'
-" Plugin 'tpope/vim-abolish'
-" Plugin 'tpope/vim-surround'
-" Plugin 'tpope/vim-fugitive'
-" Plugin 'easymotion/vim-easymotion'
-" Plugin 'scrooloose/nerdtree'
-" Plugin 'jlanzarotta/bufexplorer'
-" Plugin 'rstacruz/sparkup'
-" Plugin 'garbas/vim-snipmate'
-" Plugin 'tomtom/tlib_vim'
-" Plugin 'MarcWeber/vim-addon-mw-utils'
-" Plugin 'honza/vim-snippets'
-" Plugin 'jeffkreeftmeijer/vim-numbertoggle'
-" Plugin 'scrooloose/syntastic'
-" Plugin 'klen/python-mode'
-" Plugin 'junegunn/fzf'
-" Plugin 'vim-scripts/SearchComplete'
-" Plugin 'soulston/vim-listtrans'
-" Plugin 'xolox/vim-notes'
-" Plugin 'xolox/vim-misc'
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'tpope/vim-abolish'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-fugitive'
+Plugin 'easymotion/vim-easymotion'
+Plugin 'scrooloose/nerdtree'
+Plugin 'rstacruz/sparkup'
+Plugin 'tomtom/tlib_vim'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'honza/vim-snippets'
+Plugin 'jeffkreeftmeijer/vim-numbertoggle'
+Plugin 'scrooloose/syntastic'
+Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
+Plugin 'vim-scripts/SearchComplete'
+Plugin 'soulston/vim-listtrans'
+Plugin 'xolox/vim-notes'
+Plugin 'xolox/vim-misc'
 " Plugin 'ctrlpvim/ctrlp.vim'
-" Plugin 'mileszs/ack.vim'
-" Plugin 'Lokaltog/vim-powerline'
-" Plugin 'nixon/vim-vmath'
-" Plugin 'vim-scripts/python.vim'
-" Plugin 'tpope/vim-unimpaired'
-" Plugin 'godlygeek/tabular'
-" Plugin 'vim-scripts/renamer.vim'
-" Plugin 'mattn/emmet-vim'
-" Plugin 'vim-latex/vim-latex'
-" Plugin 'vim-scripts/perl-support.vim'
-" Plugin 'mhinz/vim-startify'
-" Plugin 'junegunn/vim-easy-align'
-" Plugin 'dhruvasagar/vim-table-mode'
-" Plugin 'bagrat/vim-workspace'
-" Plugin 'vim-voom/VOoM'
-" Plugin 'mhinz/vim-grepper'
-" Plugin 'vim-scripts/marvim'
-" Plugin 'vim-scripts/ReplaceWithRegister'
-" " Plugin 'tmhedberg/matchit'
-" Plugin 'bronson/vim-trailing-whitespace'
+Plugin 'mileszs/ack.vim'
+Plugin 'Lokaltog/vim-powerline'
+Plugin 'nixon/vim-vmath'
+Plugin 'vim-scripts/python.vim'
+Plugin 'tpope/vim-unimpaired'
+Plugin 'godlygeek/tabular'
+Plugin 'qpkorr/vim-renamer'
+Plugin 'mattn/emmet-vim'
+Plugin 'vim-latex/vim-latex'
+Plugin 'vim-scripts/perl-support.vim'
+Plugin 'mhinz/vim-startify'
+Plugin 'junegunn/vim-easy-align'
+Plugin 'dhruvasagar/vim-table-mode'
+Plugin 'bagrat/vim-workspace'
+Plugin 'vim-voom/VOoM'
+Plugin 'mhinz/vim-grepper'
+Plugin 'vim-scripts/marvim'
+Plugin 'vim-scripts/ReplaceWithRegister'
+Plugin 'tmhedberg/matchit'
+Plugin 'bronson/vim-trailing-whitespace'
+Plugin 'vimwiki/vimwiki'
+Plugin 'vim-scripts/LustyExplorer'
+Plugin 'KabbAmine/lazyList.vim'
+Plugin 'jlanzarotta/bufexplorer'
+Plugin 'junegunn/goyo.vim'
+Plugin 'vim-utils/vim-man'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+" filetype plugin on
 "
-" " All of your Plugins must be added before the following line
-" call vundle#end()            " required
-" filetype plugin indent on    " required
-" " To ignore plugin indent changes, instead use:
-" "filetype plugin on
-" "
-" "  Brief help
-" " :PluginList       - lists configured plugins
-" " :PluginInstall    - installs plugins; append `!` to update or just
-" :PluginUpdate
-" " :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" " :PluginClean      - confirms removal of unused plugins; append `!` to
-" auto-approve removal
-" "
-" " see :h vundle for more details or wiki for FAQ
-" " Put your non-Plugin stuff after this line
+"  Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
 "
-" :syntax off
-" let NERDTreeQuitOnOpen=1
-"
-" set incsearch
-" set modifiable
-"
-" "Settings for listtrans.vim
-" nmap ;l  :call ListTrans_toggle_format()<CR>
-" vmap ;L  :call ListTrans_toggle_format('visual')<CR>
-"
-" nmap <leader>nr :NERDTree<cr>
-"
-" "Settings necessary for vim-powerline
-" set nocompatible   " Disable vi-compatibility
-" set laststatus=2   " Always show the statusline
-" set encoding=utf-8 " Necessary to show Unicode glyphs
-"
-" " automatically reload vimrc when it's saved
-" " au BufWritePost .vimrc so ~/.vimrc
-"
-" "Settings necessary for vmath plugin
-" vmap <expr>  ++  VMATH_YankAndAnalyse()
-" nmap         ++  vip++
-"
-" let g:startify_bookmarks = [ '~/.vimrc',
-" '~/.config/qutebrowser/qutebrowser.conf', '~/.bashrc' ]
-"
-" "Easier navigation
-" nnoremap <C-I> <C-W>j
-" nnoremap <C-K> <C-W>k
-" nnoremap <C-L> <C-W>l
-" nnoremap <C-H> <C-W>h
-"
-" let g:notes_directories = ['~/Notes']
-"
-" " Start interactive EasyAlign in visual mode (e.g. vipga)
-" xmap ea <Plug>(EasyAlign)
-"
-" " Start interactive EasyAlign for a motion/text object (e.g. gaip)
-" nmap ea <Plug>(EasyAlign)
-"
-" " TableModeToggle fast keys
-" nmap <leader>tm :TableModeToggle<CR>
-"
-" :runtime macros/matchit.vim
-"
-" "Using exuberant ctags in vim
-" set tags=tags
-"
-" "Browsing through code
-" :set mps+=<:>
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+
+let NERDTreeQuitOnOpen=1
+
+set incsearch
+set modifiable
+
+"Settings for listtrans.vim
+nmap ;l  :call ListTrans_toggle_format()<CR>
+vmap ;L  :call ListTrans_toggle_format('visual')<CR>
+
+nmap <leader>nr :NERDTree<cr>
+
+"Settings necessary for vim-powerline
+set nocompatible   " Disable vi-compatibility
+set laststatus=2   " Always show the statusline
+set encoding=utf-8 " Necessary to show Unicode glyphs
+
+" automatically reload vimrc when it's saved
+" au BufWritePost .vimrc so ~/.vimrc
+
+"Settings necessary for vmath plugin
+vmap <expr>  ++  VMATH_YankAndAnalyse()
+nmap         ++  vip++
+
+let g:startify_bookmarks = [ '~/.vimrc', '~/.config/qutebrowser/qutebrowser.conf', '~/.bashrc', '~/vimwiki/index.wiki' ]
+
+"Easier navigation
+"nnoremap <C-I> <C-W>j
+"nnoremap <C-K> <C-W>k
+"nnoremap <C-L> <C-W>l
+"nnoremap <C-H> <C-W>h
+
+let g:notes_directories = ['~/Notes']
+
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+nmap ea <Plug>(EasyAlign)
+xmap ea <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ea <Plug>(EasyAlign)
+
+" TableModeToggle fast keys
+nmap <leader>tm :TableModeToggle<CR>
+
+:runtime macros/matchit.vim
+
+"Using exuberant ctags in vim
+set tags=tags
+
+"Browsing through code
+:set mps+=<:>
+
+"Vim-numbertoggle
+:nnoremap <silent> <C-n> :set relativenumber!<cr>
