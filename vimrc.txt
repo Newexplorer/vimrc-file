@@ -130,3 +130,6 @@ set tags=tags
 
 "Vim-numbertoggle
 :nnoremap <silent> <C-n> :set relativenumber!<cr>
+
+"Vim-wiki configuration
+let g:vimwiki_list = [{'path': '~/vimwiki/', 'path_html': '~/vimwiki_html/'}]
