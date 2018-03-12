@@ -61,6 +61,7 @@ Plugin 'jlanzarotta/bufexplorer'
 Plugin 'junegunn/goyo.vim'
 Plugin 'vim-utils/vim-man'
 Plugin 'tpope/vim-commentary'
+Plugin 'mhinz/vim-grepper'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -131,3 +132,8 @@ set tags=tags
 "Vim-numbertoggle
 :nnoremap <silent> <C-n> :set relativenumber!<cr>
 
+"Remapping movement keys for Windows
+:map ,h  <C-W>h
+:map ,j  <C-W>j
+:map ,k  <C-W>k
+:map ,l  <C-W>l
