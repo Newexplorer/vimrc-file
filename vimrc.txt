@@ -61,6 +61,8 @@ Plugin 'junegunn/goyo.vim'
 Plugin 'vim-utils/vim-man'
 Plugin 'tpope/vim-commentary'
 Plugin 'mhinz/vim-grepper'
+Plugin 'michaelavila/vim-logbook'
+" Plugin 'markonm/traces.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -136,3 +138,9 @@ set tags=tags
 :map ,j  <C-W>j
 :map ,k  <C-W>k
 :map ,l  <C-W>l
+
+"Michaelavila logbook functions to the keyboard
+nnoremap <leader>le :call LogbookNewEntry()<cr>
+nnoremap <leader>ld :call LogbookSignEntry()<cr>
+nnoremap <leader>ll :call LogbookListEntries()<cr>
+
