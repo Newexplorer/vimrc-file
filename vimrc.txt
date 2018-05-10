@@ -128,16 +128,17 @@ nmap <leader>tm :TableModeToggle<CR>
 set tags=tags
 
 "Browsing through code
+"Use the key "%"
 :set mps+=<:>
 
 "Vim-numbertoggle
 :nnoremap <silent> <C-n> :set relativenumber!<cr>
 
 "Remapping movement keys for Windows
-:map ,h  <C-W>h
-:map ,j  <C-W>j
-:map ,k  <C-W>k
-:map ,l  <C-W>l
+:map ""h  <C-W>h
+:map ""j  <C-W>j
+:map ""k  <C-W>k
+:map ""l  <C-W>l
 
 "Michaelavila logbook functions to the keyboard
 nnoremap <leader>le :call LogbookNewEntry()<cr>
