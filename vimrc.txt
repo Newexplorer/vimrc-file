@@ -61,7 +61,7 @@ Plugin 'junegunn/goyo.vim'
 Plugin 'vim-utils/vim-man'
 Plugin 'tpope/vim-commentary'
 Plugin 'mhinz/vim-grepper'
-Plugin 'michaelavila/vim-logbook'
+Plugin 'prettier/vim-prettier'
 " Plugin 'markonm/traces.vim'
 
 " All of your Plugins must be added before the following line
@@ -148,3 +148,14 @@ nnoremap <leader>ll :call LogbookListEntries()<cr>
 "inserting timestamp with F9
 :nnoremap <F9> "=strftime("%c")<CR>P
 :inoremap <F9> <C-R>=strftime("%c")<CR>
+
+"bnext and bprevious
+nnoremap <leader>n :bnext<cr>
+nnoremap <leader>N :bprev<cr>
+
+"Set the prettier CLI executable path
+let g:prettier#exec_cmd_path = "/home/porter/node_modules/prettier/bin-prettier.js"
+let g:prettier#config#parser = 'babylon'
+
+"Search in History expansion
+set history=200
