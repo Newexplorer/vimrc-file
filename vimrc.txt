@@ -100,7 +100,7 @@ set encoding=utf-8 "  Necessary to show Unicode glyphs
 vmap <expr>  ++  VMATH_YankAndAnalyse()
 nmap         ++  vip++
 
-let g:startify_bookmarks = [ '~/.vimrc', '~/.config/qutebrowser/qutebrowser.conf', '~/.bashrc', '~/vimwiki/index.wiki' ]
+let g:startify_bookmarks = [ '~/.vimrc', '~/.config/qutebrowser/qutebrowser.conf', '~/.bashrc', '~/.bash_aliases', '~/vimwiki/index.wiki' ]
 
 let g:notes_directories = ['~/Notes']
 
