@@ -132,11 +132,6 @@ set tags=tags
 :map " " k  <C-W>k
 :map " " l  <C-W>l
 
-" Michaelavila logbook functions to the keyboard
-nnoremap <leader>le :call LogbookNewEntry()<cr>
-nnoremap <leader>ld :call LogbookSignEntry()<cr>
-nnoremap <leader>ll :call LogbookListEntries()<cr>
-
 " inserting timestamp with F9
 :nnoremap <F9> " =strftime(" %c" )<CR>P
 :inoremap <F9> <C-R>=strftime(" %c" )<CR>
