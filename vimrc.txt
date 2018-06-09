@@ -60,7 +60,7 @@ Plugin 'vim-utils/vim-man'
 Plugin 'tpope/vim-commentary'
 Plugin 'mhinz/vim-grepper'
 Plugin 'prettier/vim-prettier'
-Plugin 'xuhdev/vim-latex-live-preview'
+Plugin 'ying17zi/vim-live-latex-preview'
 "  Plugin 'markonm/traces.vim'
 
 "  All of your Plugins must be added before the following line
