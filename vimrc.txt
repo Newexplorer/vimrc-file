@@ -61,6 +61,7 @@ Plugin 'tpope/vim-commentary'
 Plugin 'mhinz/vim-grepper'
 Plugin 'prettier/vim-prettier'
 Plugin 'ying17zi/vim-live-latex-preview'
+Plugin 'tommcdo/vim-exchange'
 "  Plugin 'markonm/traces.vim'
 
 "  All of your Plugins must be added before the following line
@@ -128,10 +129,10 @@ set tags=tags
 :nnoremap <silent> <C-n> :set relativenumber!<cr>
 
 " Remapping movement keys for Windows
-:map wh  <C-W>h
-:map wj  <C-W>j
-:map wk  <C-W>k
-:map wl  <C-W>l
+nnoremap wh <C-w>h " Fast moving
+nnoremap wj <C-w>j
+nnoremap wk <C-w>k
+nnoremap wl <C-w>l
 
 " inserting timestamp with F9
 :nnoremap <F9> " =strftime(" %c" )<CR>P
