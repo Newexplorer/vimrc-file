@@ -62,6 +62,7 @@ Plugin 'mhinz/vim-grepper'
 Plugin 'prettier/vim-prettier'
 Plugin 'ying17zi/vim-live-latex-preview'
 Plugin 'tommcdo/vim-exchange'
+Plugin 'bronson/vim-visual-star-search'
 "  Plugin 'markonm/traces.vim'
 
 "  All of your Plugins must be added before the following line
