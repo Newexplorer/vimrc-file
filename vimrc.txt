@@ -63,6 +63,7 @@ Plugin 'prettier/vim-prettier'
 Plugin 'ying17zi/vim-live-latex-preview'
 Plugin 'tommcdo/vim-exchange'
 Plugin 'bronson/vim-visual-star-search'
+Plugin 'mbbill/undotree'
 "  Plugin 'markonm/traces.vim'
 
 "  All of your Plugins must be added before the following line
@@ -154,3 +155,13 @@ set history=200
 	so ~/Scripts/deadkeys.vim
 	nm <leader><leader>d :call ToggleDeadKeys()<CR>
 	imap <leader><leader>d <esc>:call ToggleDeadKeys()<CR>a
+
+" Undo plugin configuration:
+if has("persistent_undo")
+    set undodir=~/.undodir/
+    set undofile
+endif
+
+nnoremap <F5> :UndotreeToggle<cr>
+
+
