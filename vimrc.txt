@@ -128,6 +128,7 @@ set tags=tags
 :set mps+=<:>
 
 " Vim-numbertoggle
+:set number relativenumber
 :nnoremap <silent> <C-n> :set relativenumber!<cr>
 
 " Remapping movement keys for Windows
@@ -164,4 +165,5 @@ endif
 
 nnoremap <F5> :UndotreeToggle<cr>
 
-
+let g:undotree_CustomUndotreeCmd  = 'topleft vertical 30 new'
+let g:undotree_CustomDiffpanelCmd = 'botright 10 new'
