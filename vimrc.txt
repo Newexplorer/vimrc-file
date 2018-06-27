@@ -138,8 +138,8 @@ nnoremap wk <C-w>k
 nnoremap wl <C-w>l
 
 " inserting timestamp with F9
-:nnoremap <F9> " =strftime(" %c" )<CR>P
-:inoremap <F9> <C-R>=strftime(" %c" )<CR>
+:nnoremap <F8> " =strftime(" %c" )<CR>P
+:inoremap <F8> <C-R>=strftime(" %c" )<CR>
 
 " bnext and bprevious
 nnoremap <leader>n :bnext<cr>
@@ -169,5 +169,5 @@ let g:undotree_CustomUndotreeCmd  = 'topleft vertical 30 new'
 let g:undotree_CustomDiffpanelCmd = 'botright 10 new'
 
 " spelling configuration:
-map <F10> :setlocal spell! spelllang=nl<CR>
-map <F11> :set spelllang=en_us<CR>
+map <F9> :setlocal spell! spelllang=nl<CR>
+map <F10> :set spelllang=en_us<CR>
