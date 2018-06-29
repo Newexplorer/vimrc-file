@@ -58,7 +58,9 @@ Plugin 'tommcdo/vim-exchange'
 Plugin 'bronson/vim-visual-star-search'
 Plugin 'mbbill/undotree'
 Plugin 'junegunn/fzf'
-"  Plugin 'markonm/traces.vim'
+Plugin 'rhysd/clever-f.vim'
+Plugin 'mileszs/ack.vim'
+" Plugin 'markonm/traces.vim'
 
 "  All of your Plugins must be added before the following line
 call vundle#end()            "  required
