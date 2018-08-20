@@ -2,6 +2,7 @@ set nocompatible              "  be iMproved, required
 filetype off                  "  required
 
 filetype plugin on
+filetype plugin indent on
 syntax on
 
 "  This has to be done for LustyExplorer:
@@ -22,8 +23,9 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tomtom/tlib_vim'
-Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'honza/vim-snippets'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'SirVer/ultisnips'
 Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 Plugin 'scrooloose/syntastic'
 Plugin 'vim-scripts/SearchComplete'
@@ -140,10 +142,6 @@ nnoremap wl <C-w>l
 nnoremap <leader>n :bnext<cr>
 nnoremap <leader>N :bprev<cr>
 
-" Set the prettier CLI executable path
-let g:prettier#exec_cmd_path = " /home/porter/node_modules/prettier/bin-prettier.js"
-let g:prettier#config#parser = 'babylon'
-
 " Search in History expansion
 set history=200
 
@@ -166,3 +164,6 @@ let g:undotree_CustomDiffpanelCmd = 'botright 10 new'
 " spelling configuration:
 map <F9> :setlocal spell! spelllang=nl<CR>
 map <F10> :set spelllang=en_us<CR>
+
+" latex pdf preview
+let g:livepreview_previewer = 'evince'
