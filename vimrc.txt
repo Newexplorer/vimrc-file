@@ -165,5 +165,3 @@ let g:undotree_CustomDiffpanelCmd = 'botright 10 new'
 map <F9> :setlocal spell! spelllang=nl<CR>
 map <F10> :set spelllang=en_us<CR>
 
-" latex pdf preview
-let g:livepreview_previewer = 'evince'
