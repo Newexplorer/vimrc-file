@@ -54,8 +54,7 @@ Plugin 'jlanzarotta/bufexplorer'
 Plugin 'junegunn/goyo.vim'
 Plugin 'vim-utils/vim-man'
 Plugin 'tpope/vim-commentary'
-Plugin 'ying17zi/vim-live-latex-preview'
-Plugin 'tommcdo/vim-exchange'
+Plugin 'xuhdev/vim-latex-live-preview'
 Plugin 'bronson/vim-visual-star-search'
 Plugin 'mbbill/undotree'
 Plugin 'junegunn/fzf'
@@ -165,3 +164,6 @@ let g:undotree_CustomDiffpanelCmd = 'botright 10 new'
 map <F9> :setlocal spell! spelllang=nl<CR>
 map <F10> :set spelllang=en_us<CR>
 
+" settings for latex-live-preview
+autocmd Filetype tex setl updatetime=1
+let g:livepreview_previewer = 'mupdf'
