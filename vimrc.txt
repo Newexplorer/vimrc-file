@@ -5,9 +5,6 @@ filetype plugin on
 filetype plugin indent on
 syntax on
 
-"  This has to be done for LustyExplorer:
-" :set hidden
-
 "  set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -121,7 +118,7 @@ set tags=tags
 
 " Browsing through code
 " Use the key " %"
-:set mps+=<:>
+set mps+=<:>
 
 " Vim-numbertoggle
 :set number relativenumber
@@ -167,3 +164,7 @@ map <F10> :set spelllang=en_us<CR>
 " settings for latex-live-preview
 autocmd Filetype tex setl updatetime=1
 let g:livepreview_previewer = 'mupdf'
+
+" using the tr command
+nmap <leader>tr  :s/\s\+/ /g<CR>
+vnoremap <leader>tr  :s/\%V\s\+/ /g<CR>
