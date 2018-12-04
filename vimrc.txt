@@ -161,3 +161,6 @@ let g:livepreview_previewer = 'mupdf'
 " using the tr command
 nmap <leader>tr  :s/\s\+/ /g<CR>
 vnoremap <leader>tr  :s/\%V\s\+/ /g<CR>
+
+" reload your. vimrc file without restarting vim
+" :so %
