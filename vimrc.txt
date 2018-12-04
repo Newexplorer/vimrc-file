@@ -139,7 +139,7 @@ set history=200
 	nm <leader><leader>d :call ToggleDeadKeys()<CR>
 	imap <leader><leader>d <esc>:call ToggleDeadKeys()<CR>a
 
-" Undo tree settings
+" Undo tree settings with F5
 nnoremap <F5> :UndotreeToggle<cr>
 
 if has("persistent_undo")
