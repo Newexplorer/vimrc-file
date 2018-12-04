@@ -74,8 +74,6 @@ filetype plugin indent on    "  required
 "  see :h vundle for more details or wiki for FAQ
 "  Put your non-Plugin stuff after this line
 
-let NERDTreeQuitOnOpen=1
-
 set incsearch
 set modifiable
 
@@ -83,22 +81,21 @@ set modifiable
 nmap ;l  :call ListTrans_toggle_format()<CR>
 vmap ;L  :call ListTrans_toggle_format('visual')<CR>
 
+" Nerdtree settings
 nmap <leader>nr :NERDTree<cr>
+let NERDTreeQuitOnOpen=1
 
 " Settings necessary for vim-powerline
 set nocompatible   "  Disable vi-compatibility
 set laststatus=2   "  Always show the statusline
 set encoding=utf-8 "  Necessary to show Unicode glyphs
 
-"  automatically reload vimrc when it's saved
-"  au BufWritePost .vimrc so ~/.vimrc
-
 " Settings necessary for vmath plugin
 vmap <expr>  ++  VMATH_YankAndAnalyse()
 nmap         ++  vip++
 
+" Settings for startify plugin
 let g:startify_bookmarks = [ '~/.vimrc', '~/.config/qutebrowser/qutebrowser.conf', '~/.bashrc', '~/.bash_aliases', '~/vimwiki/index.wiki' ]
-
 let g:notes_directories = ['~/Notes']
 
 " Start interactive EasyAlign in visual mode (e.g. vipga)
@@ -130,10 +127,6 @@ nnoremap wj <C-w>j
 nnoremap wk <C-w>k
 nnoremap wl <C-w>l
 
-" inserting timestamp with F9
-:nnoremap <F8> " =strftime(" %c" )<CR>P
-:inoremap <F8> <C-R>=strftime(" %c" )<CR>
-
 " bnext and bprevious
 nnoremap <leader>n :bnext<cr>
 nnoremap <leader>N :bprev<cr>
@@ -146,18 +139,18 @@ set history=200
 	nm <leader><leader>d :call ToggleDeadKeys()<CR>
 	imap <leader><leader>d <esc>:call ToggleDeadKeys()<CR>a
 
-" Undo plugin configuration:
+" Undo tree settings
+nnoremap <F5> :UndotreeToggle<cr>
+
 if has("persistent_undo")
     set undodir=~/.undodir/
     set undofile
 endif
 
-nnoremap <F5> :UndotreeToggle<cr>
+" inserting timestamp with F8
+:nnoremap <F8> " =strftime(" %c" )<CR>P
 
-let g:undotree_CustomUndotreeCmd  = 'topleft vertical 30 new'
-let g:undotree_CustomDiffpanelCmd = 'botright 10 new'
-
-" spelling configuration:
+" spelling configuration with F9 and F10
 map <F9> :setlocal spell! spelllang=nl<CR>
 map <F10> :set spelllang=en_us<CR>
 
