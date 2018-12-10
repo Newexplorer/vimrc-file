@@ -95,7 +95,7 @@ vmap <expr>  ++  VMATH_YankAndAnalyse()
 nmap         ++  vip++
 
 " Settings for startify plugin
-let g:startify_bookmarks = [ '~/.vimrc', '~/.config/qutebrowser/qutebrowser.conf', '~/.bashrc', '~/.bash_aliases', '~/vimwiki/index.wiki' ]
+let g:startify_bookmarks = [ '~/.vimrc', '~/.config/qutebrowser/qutebrowser.conf', '~/.bashrc', '~/.bash_aliases', '~/vimwiki/index.wiki', '~/.reminders', '~/.tmux.conf' ]
 let g:notes_directories = ['~/Notes']
 
 " Start interactive EasyAlign in visual mode (e.g. vipga)
