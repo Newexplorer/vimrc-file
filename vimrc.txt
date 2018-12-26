@@ -57,6 +57,8 @@ Plugin 'mbbill/undotree'
 Plugin 'junegunn/fzf'
 Plugin 'rhysd/clever-f.vim'
 Plugin 'mileszs/ack.vim'
+Plugin 'osyo-manga/vim-over'
+" Plugin 'terryma/vim-multiple-cursors'
 " Plugin 'markonm/traces.vim'
 " Plugin 'prettier/vim-prettier'
 "  All of your Plugins must be added before the following line
@@ -148,7 +150,8 @@ if has("persistent_undo")
 endif
 
 " inserting timestamp with F8
-:nnoremap <F8> " =strftime(" %c" )<CR>P
+nmap <F8> i<C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR><Esc>
+imap <F8> <C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR>
 
 " spelling configuration with F9 and F10
 map <F9> :setlocal spell! spelllang=nl<CR>
