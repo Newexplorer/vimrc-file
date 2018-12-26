@@ -79,6 +79,9 @@ filetype plugin indent on    "  required
 set incsearch
 set modifiable
 
+" enables switching buffers without saving
+set hidden
+
 " Settings for listtrans.vim
 nmap ;l  :call ListTrans_toggle_format()<CR>
 vmap ;L  :call ListTrans_toggle_format('visual')<CR>
