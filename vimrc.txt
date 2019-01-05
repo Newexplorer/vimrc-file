@@ -162,7 +162,7 @@ map <F10> :set spelllang=en_us<CR>
 
 " settings for latex-live-preview
 autocmd Filetype tex setl updatetime=1
-let g:livepreview_previewer = 'mupdf'
+let g:livepreview_previewer = 'zathura'
 
 " using the tr command
 nmap <leader>tr  :s/\s\+/ /g<CR>
