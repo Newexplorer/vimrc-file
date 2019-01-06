@@ -132,10 +132,6 @@ nnoremap wj <C-w>j
 nnoremap wk <C-w>k
 nnoremap wl <C-w>l
 
-" bnext and bprevious
-nnoremap <leader>n :bnext<cr>
-nnoremap <leader>N :bprev<cr>
-
 " Search in History expansion
 set history=200
 
