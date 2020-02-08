@@ -4,6 +4,8 @@ filetype off                  "  required
 filetype plugin on
 filetype plugin indent on
 syntax on
+:set number relativenumber
+
 
 "  set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -12,7 +14,6 @@ call vundle#begin()
 " call vundle#begin('~/some/path/here')
 
 "  let Vundle manage Vundle, required
-
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-abolish'
 Plugin 'tpope/vim-surround'
@@ -63,6 +64,7 @@ Plugin 'markonm/traces.vim'
 Plugin 'prettier/vim-prettier'
 Plugin 'suan/vim-instant-markdown'
 Plugin 'jiangmiao/auto-pairs'
+" Plugin 'itchyny/calendar.vim'
 
 "  All of your Plugins must be added before the following line
 call vundle#end()            "  required
@@ -103,7 +105,7 @@ vmap <expr>  ++  VMATH_YankAndAnalyse()
 nmap         ++  vip++
 
 " Settings for startify plugin
-let g:startify_bookmarks = [ '~/.vimrc', '~/.config/qutebrowser/qutebrowser.conf', '~/.bashrc', '~/.bash_aliases', '~/vimwiki/index.wiki', '~/.reminders', '~/.tmux.conf', '~/Notes' ]
+let g:startify_bookmarks = [ '~/.vimrc', '~/.config/qutebrowser/qutebrowser.conf', '~/.bashrc', '~/.bash_aliases', '~/vimwiki/index.wiki', '~/.reminders', '~/.tmux.conf', '~/Notes', '~/abbreviations.vim' ]
 let g:notes_directories = ['~/Notes']
 
 " Start interactive EasyAlign in visual mode (e.g. vipga)
@@ -126,8 +128,7 @@ set tags=tags
 set mps+=<:>
 
 " Vim-numbertoggle
-:set number relativenumber
-:nnoremap <silent> <C-n> :set relativenumber!<cr>
+:nnoremap <silent> <C-b> :set relativenumber!<cr>
 
 " Remapping movement keys for Windows
 nnoremap wh <C-w>h " Fast moving
@@ -152,8 +153,8 @@ if has("persistent_undo")
 endif
 
 " inserting timestamp with F8
-nmap <F8> i<C-R>=strftime("%d-%m-%Y %a %I:%M %p")<CR><Esc>
-imap <F8> <C-R>=strftime("%d-%m-%Y %a %I:%M %p")<CR>
+nmap <F8> i<C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR><Esc>
+imap <F8> <C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR>
 
 " spelling configuration with F9 and F10
 map <F9> :setlocal spell! spelllang=nl<CR>
@@ -183,6 +184,9 @@ set popt+=duplex:off
 set popt+=collate:y
 
 let g:showmarks_enable = 1
+
+" external abbreviations file
+:source ~/abbreviations.vim
 
 function! ExecuteMacroOverVisualRange()
   echo "@".getcmdline()
