@@ -4,8 +4,7 @@ filetype off                  "  required
 filetype plugin on
 filetype plugin indent on
 syntax on
-:set number relativenumber
-
+set number relativenumber
 
 "  set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -13,65 +12,68 @@ call vundle#begin()
 "  alternatively, pass a path where Vundle should install plugins
 " call vundle#begin('~/some/path/here')
 
-"  let Vundle manage Vundle, required
+" let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-abolish'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-unimpaired'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tomtom/tlib_vim'
 Plugin 'honza/vim-snippets'
-Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'SirVer/ultisnips'
+Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 Plugin 'scrooloose/syntastic'
 Plugin 'vim-scripts/SearchComplete'
 Plugin 'soulston/vim-listtrans'
 Plugin 'xolox/vim-notes'
 Plugin 'xolox/vim-misc'
-Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'Lokaltog/vim-powerline'
+Plugin 'ap/vim-buftabline'
 Plugin 'nixon/vim-vmath'
-Plugin 'tpope/vim-unimpaired'
 Plugin 'godlygeek/tabular'
 Plugin 'qpkorr/vim-renamer'
 Plugin 'vim-latex/vim-latex'
 Plugin 'vim-scripts/perl-support.vim'
 Plugin 'mhinz/vim-startify'
 Plugin 'junegunn/vim-easy-align'
+Plugin 'junegunn/fzf'
+Plugin 'junegunn/goyo.vim'
 Plugin 'dhruvasagar/vim-table-mode'
-Plugin 'bagrat/vim-buffet'
 Plugin 'vim-scripts/marvim'
-Plugin 'vim-scripts/ReplaceWithRegister'
 Plugin 'tmhedberg/matchit'
 Plugin 'bronson/vim-trailing-whitespace'
+Plugin 'bronson/vim-visual-star-search'
 Plugin 'vimwiki/vimwiki'
 Plugin 'KabbAmine/lazyList.vim'
 Plugin 'jlanzarotta/bufexplorer'
-Plugin 'junegunn/goyo.vim'
 Plugin 'vim-utils/vim-man'
-Plugin 'tpope/vim-commentary'
 Plugin 'xuhdev/vim-latex-live-preview'
-Plugin 'bronson/vim-visual-star-search'
 Plugin 'mbbill/undotree'
-Plugin 'junegunn/fzf'
 Plugin 'rhysd/clever-f.vim'
 Plugin 'mileszs/ack.vim'
 Plugin 'osyo-manga/vim-over'
 Plugin 'terryma/vim-multiple-cursors'
-" Plugin 'markonm/traces.vim'
 Plugin 'prettier/vim-prettier'
-Plugin 'suan/vim-instant-markdown'
 Plugin 'jiangmiao/auto-pairs'
-" Plugin 'itchyny/calendar.vim'
+Plugin 'lambdalisue/fern.vim'
+Plugin 'zaid/vim-rec'
+Plugin 'instant-markdown/vim-instant-markdown'
+" Plugin 'jamshedVesuna/vim-markdown-preview'
+" Plugin 'vim-scripts/xoria256.vim'
+" Plugin 'ctrlpvim/ctrlp.vim'
+" Plugin 'mengelbrecht/lightline-bufferline'
+" Plugin 'markonm/traces.vim'
 
 "  All of your Plugins must be added before the following line
 call vundle#end()            "  required
 filetype plugin indent on    "  required
 "  To ignore plugin indent changes, instead use:
 "  filetype plugin on
-"
+
 "   Brief help
 "  :PluginList       - lists configured plugins
 "  :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
@@ -87,6 +89,12 @@ set modifiable
 " enables switching buffers without saving
 set hidden
 
+" copy and paste
+" nnoremap <C-y> "*y"
+" vnoremap <C-y> "*y"
+" nnoremap <C-p> "*p"
+" vnoremap <C-p> "*p"
+
 " Settings for listtrans.vim
 nmap ;l  :call ListTrans_toggle_format()<CR>
 vmap ;L  :call ListTrans_toggle_format('visual')<CR>
@@ -100,12 +108,15 @@ set nocompatible   "  Disable vi-compatibility
 set laststatus=2   "  Always show the statusline
 set encoding=utf-8 "  Necessary to show Unicode glyphs
 
+" Setting for vim-powerline
+let g:Powerline_colorscheme = 'solarized256'
+
 " Settings necessary for vmath plugin
 vmap <expr>  ++  VMATH_YankAndAnalyse()
 nmap         ++  vip++
 
 " Settings for startify plugin
-let g:startify_bookmarks = [ '~/.vimrc', '~/.config/qutebrowser/qutebrowser.conf', '~/.bashrc', '~/.bash_aliases', '~/vimwiki/index.wiki', '~/.reminders', '~/.tmux.conf', '~/Notes', '~/abbreviations.vim' ]
+let g:startify_bookmarks = [ '~/.vimrc', '~/.config/qutebrowser/qutebrowser.conf', '~/.bashrc', '~/.bash_aliases', '~/vimwiki/index.wiki', '~/.reminders', '~/.tmux.conf', '~/Notes' ]
 let g:notes_directories = ['~/Notes']
 
 " Start interactive EasyAlign in visual mode (e.g. vipga)
@@ -153,8 +164,8 @@ if has("persistent_undo")
 endif
 
 " inserting timestamp with F8
-nmap <F8> i<C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR><Esc>
-imap <F8> <C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR>
+nmap <F8> i<C-R>=strftime("%d-%m-%Y %a %I:%M %p")<CR><Esc>
+imap <F8> <C-R>=strftime("%d-%m-%Y %a %I:%M %p")<CR>
 
 " spelling configuration with F9 and F10
 map <F9> :setlocal spell! spelllang=nl<CR>
@@ -162,14 +173,17 @@ map <F10> :set spelllang=en_us<CR>
 
 " settings for latex-live-preview
 autocmd Filetype tex setl updatetime=1
-let g:livepreview_previewer = 'evince'
+let g:livepreview_previewer = 'zathura'
 
 " using the tr command
 nmap <leader>tr  :s/\s\+/ /g<CR>
 vnoremap <leader>tr  :s/\%V\s\+/ /g<CR>
 
-" " execute macro over visual range
+" execute macro over visual range
 xnoremap @ :<C-u>call ExecuteMacroOverVisualRange()<CR>
+
+" abbreviation file
+  source /home/porter14/.vim/plugin/myabbreviations.vim
 
 " printer settings
 set printheader=%<%F%h%m%=Page\ %N
@@ -185,13 +199,20 @@ set popt+=collate:y
 
 let g:showmarks_enable = 1
 
-" external abbreviations file
-:source ~/abbreviations.vim
+colorscheme pablo
+function! g:BufTablineFill ()
+highlight! link Comment Error
+highlight! Normal ctermbg=0 guibg=#ffffff
+ endfunction
 
-function! ExecuteMacroOverVisualRange()
-  echo "@".getcmdline()
-  execute ":'<,'>normal @".nr2char(getchar())
-endfunction
+" settings for vim-tabline
+" highlight! link Comment Error
+" highlight! Normal ctermbg=2 guibg= blue
+
+" function! ExecuteMacroOverVisualRange()
+"   echo "@".getcmdline()
+"   execute ":'<,'>normal @".nr2char(getchar())
+" endfunction
 
 " reload your. vimrc file without restarting vim
 " :so %
