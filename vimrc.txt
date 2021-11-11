@@ -28,7 +28,7 @@ Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 Plugin 'scrooloose/syntastic'
 Plugin 'vim-scripts/SearchComplete'
-Plugin 'soulston/vim-listtrans'
+Plugin 'schoettl/listtrans.vim'
 Plugin 'xolox/vim-notes'
 Plugin 'xolox/vim-misc'
 Plugin 'Lokaltog/vim-powerline'
@@ -96,11 +96,11 @@ set hidden
 " vnoremap <C-p> "*p"
 
 " Settings for listtrans.vim
-nmap ;l  :call ListTrans_toggle_format()<CR>
-vmap ;L  :call ListTrans_toggle_format('visual')<CR>
+nmap  ;l   <Plug>ListtransToggle
+vmap  ;l   <Plug>ListtransToggleVisual
 
 " Nerdtree settings
-nmap <leader>nr :NERDTree<cr>
+nmap <leader>nr :NERDTree ~/Projects<cr>
 let NERDTreeQuitOnOpen=1
 
 " Settings necessary for vim-powerline
@@ -151,7 +151,7 @@ nnoremap wl <C-w>l
 set history=200
 
 " Toggle DeadKeys set (for accent marks):
-	so ~/Scripts/deadkeys.vim
+	so ~/Code/deadkeys.vim
 	nm <leader><leader>d :call ToggleDeadKeys()<CR>
 	imap <leader><leader>d <esc>:call ToggleDeadKeys()<CR>a
 
