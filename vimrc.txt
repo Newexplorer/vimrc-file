@@ -50,17 +50,15 @@ Plugin 'bronson/vim-visual-star-search'
 Plugin 'vimwiki/vimwiki'
 Plugin 'KabbAmine/lazyList.vim'
 Plugin 'jlanzarotta/bufexplorer'
-Plugin 'vim-utils/vim-man'
 Plugin 'xuhdev/vim-latex-live-preview'
 Plugin 'mbbill/undotree'
 Plugin 'rhysd/clever-f.vim'
 Plugin 'mileszs/ack.vim'
 Plugin 'osyo-manga/vim-over'
-Plugin 'terryma/vim-multiple-cursors'
+Plugin 'mg979/vim-visual-multi'
 Plugin 'prettier/vim-prettier'
 Plugin 'jiangmiao/auto-pairs'
-Plugin 'lambdalisue/fern.vim'
-Plugin 'zaid/vim-rec'
+" Plugin 'lambdalisue/fern.vim'
 Plugin 'instant-markdown/vim-instant-markdown'
 " Plugin 'jamshedVesuna/vim-markdown-preview'
 " Plugin 'vim-scripts/xoria256.vim'
@@ -100,7 +98,7 @@ nmap  ;l   <Plug>ListtransToggle
 vmap  ;l   <Plug>ListtransToggleVisual
 
 " Nerdtree settings
-nmap <leader>nr :NERDTree ~/Projects<cr>
+nmap <leader>nr :NERDTree<cr>
 let NERDTreeQuitOnOpen=1
 
 " Settings necessary for vim-powerline
@@ -116,8 +114,11 @@ vmap <expr>  ++  VMATH_YankAndAnalyse()
 nmap         ++  vip++
 
 " Settings for startify plugin
-let g:startify_bookmarks = [ '~/.vimrc', '~/.config/qutebrowser/qutebrowser.conf', '~/.bashrc', '~/.bash_aliases', '~/vimwiki/index.wiki', '~/.reminders', '~/.tmux.conf', '~/Notes' ]
-let g:notes_directories = ['~/Notes']
+let g:startify_bookmarks = [ '~/.vimrc', '~/.config/qutebrowser/qutebrowser.conf', '~/.bashrc', '~/.bash_aliases', '~/vimwiki/index.wiki', '~/vimwiki1/index.wiki', '~/.reminders', '~/.tmux.conf', '~/Notes' ]
+
+" Lists of vimwikis and notes directories
+let g:vimwiki_list = [{'path': '~/vimwiki'}, {'path': 'vimwiki1'}]
+let g:notes_directories = ['~/Notes', '~/Zettelkasten']
 
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 nmap ea <Plug>(EasyAlign)
@@ -176,6 +177,7 @@ autocmd Filetype tex setl updatetime=1
 let g:livepreview_previewer = 'zathura'
 
 " using the tr command
+" select the text in visual mode and then issue the command
 nmap <leader>tr  :s/\s\+/ /g<CR>
 vnoremap <leader>tr  :s/\%V\s\+/ /g<CR>
 
@@ -183,7 +185,7 @@ vnoremap <leader>tr  :s/\%V\s\+/ /g<CR>
 xnoremap @ :<C-u>call ExecuteMacroOverVisualRange()<CR>
 
 " abbreviation file
-  source /home/porter14/.vim/plugin/myabbreviations.vim
+source /home/porter14/.vim/plugin/myabbreviations.vim
 
 " printer settings
 set printheader=%<%F%h%m%=Page\ %N
