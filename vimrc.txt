@@ -44,12 +44,10 @@ Plugin 'junegunn/fzf'
 Plugin 'junegunn/goyo.vim'
 Plugin 'dhruvasagar/vim-table-mode'
 Plugin 'vim-scripts/marvim'
-Plugin 'tmhedberg/matchit'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'bronson/vim-visual-star-search'
 Plugin 'vimwiki/vimwiki'
 Plugin 'KabbAmine/lazyList.vim'
-Plugin 'jlanzarotta/bufexplorer'
 Plugin 'xuhdev/vim-latex-live-preview'
 Plugin 'mbbill/undotree'
 Plugin 'rhysd/clever-f.vim'
@@ -58,11 +56,9 @@ Plugin 'osyo-manga/vim-over'
 Plugin 'mg979/vim-visual-multi'
 Plugin 'prettier/vim-prettier'
 Plugin 'jiangmiao/auto-pairs'
-" Plugin 'lambdalisue/fern.vim'
 Plugin 'instant-markdown/vim-instant-markdown'
 " Plugin 'jamshedVesuna/vim-markdown-preview'
 " Plugin 'vim-scripts/xoria256.vim'
-" Plugin 'ctrlpvim/ctrlp.vim'
 " Plugin 'mengelbrecht/lightline-bufferline'
 " Plugin 'markonm/traces.vim'
 
@@ -86,6 +82,8 @@ set modifiable
 
 " enables switching buffers without saving
 set hidden
+
+let mapleader = '\'
 
 " copy and paste
 " nnoremap <C-y> "*y"
@@ -152,9 +150,12 @@ nnoremap wl <C-w>l
 set history=200
 
 " Toggle DeadKeys set (for accent marks):
-	so ~/Code/deadkeys.vim
+	so ~/Scripts/deadkeys.vim
 	nm <leader><leader>d :call ToggleDeadKeys()<CR>
 	imap <leader><leader>d <esc>:call ToggleDeadKeys()<CR>a
+
+" Compiler
+" source /home/porter14/Scripts/compiler
 
 " Undo tree settings with F5
 nnoremap <F5> :UndotreeToggle<cr>
@@ -165,7 +166,7 @@ if has("persistent_undo")
 endif
 
 " inserting timestamp with F8
-nmap <F8> i<C-R>=strftime("%d-%m-%Y %a %I:%M %p")<CR><Esc>
+nmap <F8> <C-R>=strftime("%d-%m-%Y %a %I:%M %p")<CR><Esc>
 imap <F8> <C-R>=strftime("%d-%m-%Y %a %I:%M %p")<CR>
 
 " spelling configuration with F9 and F10
@@ -185,7 +186,9 @@ vnoremap <leader>tr  :s/\%V\s\+/ /g<CR>
 xnoremap @ :<C-u>call ExecuteMacroOverVisualRange()<CR>
 
 " abbreviation file
-source /home/porter14/.vim/plugin/myabbreviations.vim
+" source /home/porter14/.vim/plugin/myabbreviations.vim
+
+let groffviewer_default="zathura"
 
 " printer settings
 set printheader=%<%F%h%m%=Page\ %N
